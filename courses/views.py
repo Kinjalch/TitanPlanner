@@ -1,11 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, render_to_response
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from courses.models import Course
 
 
 def index(request):
-	return HttpResponseRedirect('/calendar/')
+	return render_to_response('index.html')
 
 def display_all(request):
 	course_list = Course.objects.all()
@@ -31,7 +31,7 @@ def add(request, pk):
 	new.save()
 	msg = "Message text."
 	#return reverse('add', args)
-	return HttpResponseRedirect('/calendar/')
+	return HttpResponse('/search-form/')
 
 def remove(request, pk):
 	course = Course.objects.get(pk=pk)

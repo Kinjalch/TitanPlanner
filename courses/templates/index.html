@@ -34,8 +34,8 @@ Description: This is the index page of TitanPlanner, which renders the calendar 
   </head>
 
 	<body style="overflow: auto;">
-		<iframe src="cal.html" id="left-page" width="50%" frameborder="0" class="float-left"></iframe>
-		<iframe src="search.html" id="right-page" width="50%" frameborder="0" class="float-left"></iframe>
+		<iframe src="{% url 'calendar' %}" id="left-page" width="50%" frameborder="0" class="float-left"></iframe>
+		<iframe src="{% url 'search_form' %}" id="right-page" width="50%" frameborder="0" class="float-left"></iframe>
 
 
     <!-- Bootstrap core JavaScript
